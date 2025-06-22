@@ -4,10 +4,16 @@ Author Mohammed Umar Khan
 Todo App 
 
 Frontend 
--React Vite
--Tailwind Css
+- React Vite
+- Tailwind Css
+
+State management 
+- zustand
 
 Backend
--Express
--mongoose
--nodemon 
+- Express
+- mongoose
+- cors
+- nodemon 
+
+

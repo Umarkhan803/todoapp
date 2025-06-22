@@ -17,7 +17,8 @@ app.get("/", (req, res) => {
   res.send("Server is running...");
 });
 // CREATE, READ, UPDATE, DELETE (CRUD) operations for Todo
-app.post("/todos", async (req, res) => {
+//create todo
+app.post("/api/todos", async (req, res) => {
   const { title } = req.body;
   if (!title) {
     return res.status(400).json({ message: "Title is required" });
@@ -25,8 +26,8 @@ app.post("/todos", async (req, res) => {
   const newTodo = await Todo.create({ title });
   res.status(201).json(newTodo);
 });
-
-app.put("/todos/:id", async (req, res) => {
+//update todo
+app.put("/api/todos/:id", async (req, res) => {
   const { id } = req.params;
   const { title } = req.body;
   if (!title) {
@@ -38,7 +39,8 @@ app.put("/todos/:id", async (req, res) => {
   }
   res.json(updatedTodo);
 });
-app.delete("/todos/:id", async (req, res) => {
+//delete todo
+app.delete("/api/todos/:id", async (req, res) => {
   const { id } = req.params;
   const deletedTodo = await Todo.findByIdAndDelete(id);
   if (!deletedTodo) {
@@ -46,7 +48,8 @@ app.delete("/todos/:id", async (req, res) => {
   }
   res.json({ message: "Todo deleted successfully" });
 });
-app.get("/todos", async (req, res) => {
+//get all todos
+app.get("/api/todos", async (req, res) => {
   const todos = await Todo.find();
   res.json(todos);
 });

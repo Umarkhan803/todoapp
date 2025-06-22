@@ -1,9 +1,10 @@
 import "./App.css";
+import Todo from "./components/Todo";
 
 function App() {
   return (
     <>
-      <h1>Welcome to the React App</h1>
+      <Todo />
     </>
   );
 }

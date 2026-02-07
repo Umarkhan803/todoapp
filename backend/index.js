@@ -2,11 +2,12 @@ const express = require("express");
 const { get } = require("mongoose");
 const Todo = require("./schema/todoSchema");
 const connectDB = require("./database/Config");
+const dotenv = require("dotenv");
+dotenv.config();
 const cors = require("cors");
 connectDB();
-
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());

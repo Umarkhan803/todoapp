@@ -1,7 +1,7 @@
 const express = require("express");
 const { get } = require("mongoose");
 const Todo = require("./schema/todoSchema");
-const connectDB = require("./database/Config");
+const connectDB = require("./database/config");
 const dotenv = require("dotenv");
 dotenv.config();
 const cors = require("cors");

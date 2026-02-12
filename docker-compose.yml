@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  todo-frontend:
+    container_name: todo-frontend
+    image: todo-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/dist
+
+  todo-backend:
+    container_name: todo-backend
+    image: todo-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+      - /app/dist
